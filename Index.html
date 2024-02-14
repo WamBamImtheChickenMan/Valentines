@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quizstyle.css">
+</head>
+<body>
+    <!-- Overlay/modal for the mini-game -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <!-- Mini-game content -->
+            <div class="quiz-container">
+                <h1>CAPtcha</h1>
+                <form id="quizForm">
+                    <div class="question">
+                        <label for="q1">Who can run 7km faster? (only one will even finish)</label>
+                        <select id="q1" name="q1">
+                            <option value="">Select Answer</option>
+                            <option value="red">Me (Maddie)</option>
+                            <option value="blue">You (Robert)</option>
+                        </select>
+                    </div>
+                    <div class="question">
+                        <label for="q2">Who's the sleepiest?</label>
+                        <select id="q2" name="q2">
+                            <option value="">Select Answer</option>
+                            <option value="rose">Me (Maddie)</option>
+                            <option value="daisy">You (Robert)</option>
+                            <option value="rose">Him (Toby)</option>
+                        </select>
+                    </div>
+                    <div class="question">
+                        <label for="q3">Who's got the stronger glutes?</label>
+                        <select id="q3" name="q3">
+                            <option value="">Select Answer</option>
+                            <option value="vday">Me (Maddie)</option>
+                            <option value="february 14th">You (Robert)</option>
+                        </select>
+                    </div>
+                    <div class="question">
+                        <label for="q4">Who's taller? (This had to be asked)</label>
+                        <select id="q4" name="q4">
+                            <option value="">Select Answer</option>
+                            <option value="1">Me (Maddie)</option>
+                            <option value="2">You (Robert)</option>
+                            <option value="3">You (Robert standing straight)</option>
+                        </select>
+                    </div>
+                    <div class="question">
+                        <label for="q5">Who's got the better set of chompers?</label>
+                        <select id="q5" name="q5">
+                            <option value="">Select Answer</option>
+                            <option value="1">Me (Maddie)</option>
+                            <option value="2">You (Robert)</option>
+                            <option value="3">You (Robert in a few years without a choice)</option>
+                        </select>
+                    </div>
+                    <button type="submit" onclick="submitButton()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner"> 
+            <div class="front">
+                <img src="Images\bunny.gif" alt="Cute Image" id="gifimage">
+                <h2 id="message">Will you be my valentine?</h2>
+                <div class="buttons">
+                    <button id="yesBtn" onclick="yesFunction()">Yes</button>
+                    <button id="noBtn" onclick="testFunction()">No</button>
+                </div>
+            </div>
+            <div class="back">
+                <h2>Yipee</h2>
+            </div>
+        </div>
+    </div>
+    <audio id="nationalAnthem" src="hr.mp3"></audio>
+    <a href="javascript:void(0)" class="croatian-flag" id="croatianFlag" onclick="FlagFunction()">
+        <img src="Images\croatia.png" alt="Croatian Flag">
+    </a>
+    <script src="script.js"></script>
+    <script src="quizscript.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('modal');
+        
+            // Check if quiz has been completed
+            var quizCompleted = localStorage.getItem('quizCompleted');
+            if (quizCompleted === 'true') {
+                modal.style.display = 'none'; // Hide the modal
+            }
+        });
+        </script>
+        
+</body>
+</html>

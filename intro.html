@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Quiz</title>
+    <link rel="stylesheet" href="quizstyle.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>CAPtcha</h1>
+        <form id="quizForm">
+            <div class="question">
+                <label for="q1">What color is often associated with Valentine's Day?</label>
+                <select id="q1" name="q1">
+                    <option value="">Select Answer</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q2">Which flower is commonly given on Valentine's Day?</label>
+                <select id="q2" name="q2">
+                    <option value="">Select Answer</option>
+                    <option value="rose">Rose</option>
+                    <option value="daisy">Daisy</option>
+                    <option value="tulip">Tulip</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q3">What is another name for Valentine's Day?</label>
+                <select id="q3" name="q3">
+                    <option value="">Select Answer</option>
+                    <option value="vday">V-Day</option>
+                    <option value="love day">Love Day</option>
+                    <option value="february 14th">February 14th</option>
+                </select>
+            </div>
+            <button type="submit" onclick="submitButton()">Submit</button>
+        </form>
+    </div>
+    <script src="quizscript.js"></script>
+    <script>
+        function submitButton() {
+            // Submit logic to check answers
+            // If answers are correct
+            localStorage.setItem('quizCompleted', 'true');
+        }
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,201 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffcccc; /* Pink background */
+}
+
+.front img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#noBtn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#yesBtn.clicked {
+    animation: bounce 1s ease;
+}
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* Add perspective for the 3D effect */
+    position: relative;
+    z-index: 2;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* Hide the backface during the animation */
+    transition: transform 0.5s; /* Smooth transition for the flip effect */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    background-color: #fff; /* White background */
+}
+
+.front {
+    z-index: 2; /* Ensure front is on top */
+    text-align: center;
+    padding: 20px;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+/* Overlay/modal styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 9999; /* Ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.quiz-container {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-y: auto;
+}
+
+quiz
+
+h1 {
+    color: #ff4d9e;
+}
+
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4d9e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+
+
+/* Croatian flag styles */
+.croatian-flag {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 999; /* Ensure it's on top */
+}
+
+.croatian-flag img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rotating {
+    transform: scale(10000);
+    animation: rotateFlag 5s linear infinite; /* Start rotating */
+    transform: translate(50%, 50%);
+    bottom: 50%;
+    right: 50%;
+}
+
+@keyframes rotateFlag {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
